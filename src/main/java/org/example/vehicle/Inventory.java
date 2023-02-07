@@ -2,36 +2,37 @@ package org.example.vehicle;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
 
     protected LocalDate lastService;
-    private List<String> statuses;
+    private ArrayList<Vehicle> vehicles = new ArrayList<>();
 
-    public Inventory() {
+    public void addVericle(Vehicle vehicle){
+        vehicles.add(vehicle);
     }
-
-    public void addStatus() {
-        List<String> statuses = new ArrayList<>();
-        for (String status : statuses) {
-            statuses.add(status);
-        }
-        public void getStatus (){
-            LocalDate localDate = LocalDate.parse("06");
-//                statuses = (localDate.isBefore(LocalDate.parse("36")));
-            if (localDate.isBefore("06")){
-                System.out.println("in operation");
-                if (localDate.isAfter("07") && localDate.isBefore("36")){
-                    System.out.println("need repair");
-
-                } else {
-                    System.out.println("for scrap");
-                }
-
+    public void addVehicals(List<Vehicle> vehicles){
+        for(Vehicle vehicle:vehicles){
+            vehicles.add(vehicle);
         }
     }
 
+
+
+
+    public void vehicleStatus(String status){
+        ArrayList<Vehicle> vehicleStatus = new ArrayList<>();
+        for (Vehicle vehicle: vehicles){
+            if(vehicle.getStatus().equals(status)){
+                vehicleStatus.add(vehicle);
+            }
+        }
+        for (Vehicle vehicle:vehicleStatus){
+
+        }
+    }
 }
-}
+
